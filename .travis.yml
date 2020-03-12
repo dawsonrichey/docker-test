@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t drichey89/node .
   - docker images drichey89/node
+
+before_deploy:
+  - docker login -u drichey89 -p Swim1989.!.!.!
+
+deploy:
+  provided: script
+  script: docker push drichey89/node
+  on:
+    branch: master
