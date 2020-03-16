@@ -1,0 +1,9 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: "$HEROKU_API_KEY"
+    app: "docker-test-app-drichey"
+    run:
+      - "heroku container:login"
+      - "heroku conatiner:push web -a docker-test-app-drichey"
+      - "heroku conatiner:release web -a docker-test-app-drichey"
