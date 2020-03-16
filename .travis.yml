@@ -1,6 +1,8 @@
 language: node_js
 sudo: required	
 
+before_deploy:
+  - heroku login -i heroku: "$HEROKU_USER" Email: "$HEROKU_USER" Password: "$HEROKU_PASS"
 deploy:
   provider: heroku
   api_key:
